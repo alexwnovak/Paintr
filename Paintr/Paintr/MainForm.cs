@@ -1,3 +1,4 @@
+
 using System.Drawing;
 ﻿using System;
 using System.IO;
@@ -7,8 +8,10 @@ namespace Paintr
 {
    public partial class MainForm : Form
    {
+      private const string _autoSaveFilename = "____autosave.bmp";
       private bool _leftMouseDown;
       private Point _mouseAnchorPoint;
+      private Timer _autoSaveTimer;
 
       private bool _hasFileOpen;
       private bool HasFileOpen
@@ -20,8 +23,22 @@ namespace Paintr
          set
          {
             _hasFileOpen = value;
+            if ( _hasFileOpen )
+            {
+               _autoSaveTimer = new Timer
+               {
+                  Interval = 5000
+               };
+               _autoSaveTimer.Tick +=_autoSaveTimer_Tick;
+               _autoSaveTimer.Start();
+            }
             UpdateUI();
          }
+      }
+
+      private void _autoSaveTimer_Tick( object sender, EventArgs e )
+      {
+         _backgroundImage.Save( _autoSaveFilename );
       }
 
       private Graphics _graphics;
