@@ -23,12 +23,15 @@ namespace Paintr
       }
 
       private Graphics _graphics;
+      private Pen _linePen;
       private Image _backgroundImage;
 
       public MainForm()
       {
          InitializeComponent();
          UpdateUI();
+
+         _linePen = new Pen( Brushes.Red, 10.0f );
       }
 
       private void UpdateUI()
@@ -93,7 +96,7 @@ namespace Paintr
             return;
          }
 
-         _graphics.DrawLine( Pens.Red, _mouseAnchorPoint, e.Location );
+         _graphics.DrawLine( _linePen, _mouseAnchorPoint, e.Location );
          Invalidate();
 
          _mouseAnchorPoint = e.Location;
