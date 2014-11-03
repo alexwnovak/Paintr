@@ -32,6 +32,7 @@
          this._fileMenu = new System.Windows.Forms.ToolStripMenuItem();
          this._exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._openMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
          this._menuStrip.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -94,6 +95,7 @@
       private System.Windows.Forms.ToolStripMenuItem _fileMenu;
       private System.Windows.Forms.ToolStripMenuItem _exitMenuItem;
       private System.Windows.Forms.ToolStripMenuItem _openMenuItem;
+      private System.Windows.Forms.OpenFileDialog _openFileDialog;
    }
 }
 
