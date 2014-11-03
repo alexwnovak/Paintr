@@ -72,12 +72,7 @@ namespace Paintr
             return;
          }
 
-         _backgroundImage = Image.FromFile( _openFileDialog.FileName );
-         _graphics = Graphics.FromImage( _backgroundImage );
-
-         Invalidate();
-
-         HasFileOpen = true;
+         OpenFile( _openFileDialog.FileName );
       }
 
       private void OpenFile( String path )
