@@ -93,9 +93,7 @@ namespace Paintr
             return;
          }
 
-         var rect = new Rectangle( _mouseAnchorPoint, new Size( 5, 5 ) );
-
-         _graphics.DrawRectangle( Pens.Red, rect );
+         _graphics.DrawLine( Pens.Red, _mouseAnchorPoint, e.Location );
          Invalidate();
 
          _mouseAnchorPoint = e.Location;
