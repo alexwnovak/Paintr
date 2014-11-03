@@ -59,5 +59,15 @@ namespace Paintr
 
          HasFileOpen = false;
       }
+
+      private void MainForm_MouseDown( object sender, MouseEventArgs e )
+      {
+
+      }
+
+      private void MainForm_MouseUp( object sender, MouseEventArgs e )
+      {
+
+      }
    }
 }
