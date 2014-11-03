@@ -8,6 +8,20 @@ namespace Paintr
       private bool _leftMouseDown;
       private Point _mouseAnchorPoint;
 
+      private ToolType _toolType = ToolType.Pen;
+      private ToolType ToolType
+      {
+         get
+         {
+            return _toolType;
+         }
+         set
+         {
+            _toolType = value;
+            UpdateUI();
+         }
+      }
+
       private bool _hasFileOpen;
       private bool HasFileOpen
       {
@@ -37,6 +51,9 @@ namespace Paintr
       {
          _closeMenuItem.Enabled = HasFileOpen;
          _saveMenuItem.Enabled = HasFileOpen;
+
+         _penMenuItem.Checked = _toolType == ToolType.Pen;
+         _rectangleMenuItem.Checked = _toolType == ToolType.Rectangle;
       }
 
       private void _exitMenuItem_Click( object sender, System.EventArgs e )
@@ -130,12 +147,12 @@ namespace Paintr
 
       private void _penMenuItem_Click( object sender, System.EventArgs e )
       {
-
+         ToolType = ToolType.Pen;
       }
 
       private void _rectangleMenuItem_Click( object sender, System.EventArgs e )
       {
-
+         ToolType = ToolType.Rectangle;
       }
    }
 }
