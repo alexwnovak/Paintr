@@ -117,10 +117,13 @@ namespace Paintr
             return;
          }
 
-         _backgroundImage.AddLine( _mouseAnchorPoint, e.Location, _linePen );
-         Invalidate();
+         if ( ToolType == ToolType.Pen )
+         {
+            _backgroundImage.AddLine( _mouseAnchorPoint, e.Location, _linePen );
+            Invalidate();
 
-         _mouseAnchorPoint = e.Location;
+            _mouseAnchorPoint = e.Location;
+         }
       }
 
       private void MainForm_Paint( object sender, PaintEventArgs e )
