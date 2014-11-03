@@ -7,6 +7,7 @@ namespace Paintr
    public partial class MainForm : Form
    {
       private bool _leftMouseDown;
+      private Point _mouseAnchorPoint;
 
       private bool _hasFileOpen;
       private bool HasFileOpen
@@ -21,6 +22,9 @@ namespace Paintr
             UpdateUI();
          }
       }
+
+      private Graphics _graphics;
+      private Image _backgroundImage;
 
       public MainForm()
       {
@@ -47,16 +51,20 @@ namespace Paintr
             return;
          }
 
-         BackgroundImage = Image.FromFile( _openFileDialog.FileName );
+         _backgroundImage = Image.FromFile( _openFileDialog.FileName );
+         _graphics = Graphics.FromImage( _backgroundImage );
+
+         Invalidate();
+
          HasFileOpen = true;
       }
 
       private void _closeMenuItem_Click( object sender, System.EventArgs e )
       {
-         if ( BackgroundImage != null )
+         if ( _backgroundImage != null )
          {
-            BackgroundImage.Dispose();
-            BackgroundImage = null;
+            _backgroundImage.Dispose();
+            _backgroundImage = null;
          }
 
          HasFileOpen = false;
@@ -67,6 +75,7 @@ namespace Paintr
          if ( e.Button == MouseButtons.Left )
          {
             _leftMouseDown = true;
+            _mouseAnchorPoint = e.Location;
          }
       }
 
@@ -80,10 +89,18 @@ namespace Paintr
 
       private void MainForm_MouseMove( object sender, MouseEventArgs e )
       {
-         if ( !_leftMouseDown )
+         if ( !_leftMouseDown || !HasFileOpen )
          {
             return;
          }
+
+         var rect = new Rectangle( _mouseAnchorPoint, new Size( 5, 5 ) );
+
+         _graphics.DrawRectangle( Pens.Red, rect );
+         Invalidate();
+
+         _mouseAnchorPoint = e.Location;
+      }
 
       private void MainForm_Paint( object sender, PaintEventArgs e )
       {
