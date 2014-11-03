@@ -70,6 +70,7 @@ namespace Paintr
          {
             _backgroundImage.Dispose();
             _backgroundImage = null;
+            Invalidate();
 
             Text = "Paintr";
          }
