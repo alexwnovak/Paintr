@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -25,7 +26,7 @@ namespace Paintr
             {
                _autoSaveTimer = new Timer
                {
-                  Interval = 1000
+                  Interval = 5000
                };
                _autoSaveTimer.Tick +=_autoSaveTimer_Tick;
                _autoSaveTimer.Start();
@@ -45,6 +46,10 @@ namespace Paintr
       public MainForm()
       {
          InitializeComponent();
+         if ( File.Exists("___autosave.bmp") )
+         {
+            OpenFile( "___autosave.bmp" );
+         }
          UpdateUI();
       }
 
@@ -73,6 +78,19 @@ namespace Paintr
          Invalidate();
 
          HasFileOpen = true;
+      }
+
+      private void OpenFile( String path )
+      {
+         using ( var fileStream = File.OpenRead( path ) )
+         {
+            _backgroundImage = Image.FromStream(fileStream);
+            _graphics = Graphics.FromImage(_backgroundImage);
+
+            Invalidate();
+
+            HasFileOpen = true;
+         }
       }
 
       private void _closeMenuItem_Click( object sender, System.EventArgs e )
@@ -139,7 +157,10 @@ namespace Paintr
 
          var filename = _saveFileDialog.FileName;
 
-         _backgroundImage.Save(filename);
+         if ( !string.IsNullOrWhiteSpace(filename) )
+         {
+            _backgroundImage.Save(filename);
+         }
       }
    }
 }
