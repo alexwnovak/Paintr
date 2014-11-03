@@ -117,5 +117,10 @@ namespace Paintr
 
          e.Graphics.DrawImage( _backgroundImage, Point.Empty );
       }
+
+      private void saveToolStripMenuItem_Click(object sender, System.EventArgs e)
+      {
+
+      }
    }
 }
