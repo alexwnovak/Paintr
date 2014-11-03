@@ -127,5 +127,15 @@ namespace Paintr
 
          _backgroundImage.Save( _saveFileDialog.FileName );
       }
+
+      private void _penMenuItem_Click( object sender, System.EventArgs e )
+      {
+
+      }
+
+      private void _rectangleMenuItem_Click( object sender, System.EventArgs e )
+      {
+
+      }
    }
 }

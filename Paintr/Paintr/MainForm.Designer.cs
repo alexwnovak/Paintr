@@ -127,6 +127,7 @@
          this._penMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
          this._penMenuItem.Size = new System.Drawing.Size(166, 22);
          this._penMenuItem.Text = "&Pen";
+         this._penMenuItem.Click += new System.EventHandler(this._penMenuItem_Click);
          // 
          // _openFileDialog
          // 
@@ -139,6 +140,7 @@
          this._rectangleMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
          this._rectangleMenuItem.Size = new System.Drawing.Size(166, 22);
          this._rectangleMenuItem.Text = "&Rectangle";
+         this._rectangleMenuItem.Click += new System.EventHandler(this._rectangleMenuItem_Click);
          // 
          // MainForm
          // 
