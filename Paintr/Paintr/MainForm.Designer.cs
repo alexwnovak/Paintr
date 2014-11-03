@@ -65,7 +65,8 @@
          // _openMenuItem
          // 
          this._openMenuItem.Name = "_openMenuItem";
-         this._openMenuItem.Size = new System.Drawing.Size(152, 22);
+         this._openMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+         this._openMenuItem.Size = new System.Drawing.Size(191, 22);
          this._openMenuItem.Text = "&Open Image...";
          this._openMenuItem.Click += new System.EventHandler(this._openMenuItem_Click);
          // 
