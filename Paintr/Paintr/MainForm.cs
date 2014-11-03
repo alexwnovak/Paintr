@@ -114,11 +114,17 @@ namespace Paintr
 
       private void saveToolStripMenuItem_Click(object sender, System.EventArgs e)
       {
+         saveAnnotations();
+      }
+
+      private void saveAnnotations()
+      {
+         _saveFileDialog.Filter = _openFileDialog.Filter;
          _saveFileDialog.ShowDialog();
 
          var filename = _saveFileDialog.FileName;
 
-         _backgroundImage.Save( filename );
+         _backgroundImage.Save(filename);
       }
    }
 }
