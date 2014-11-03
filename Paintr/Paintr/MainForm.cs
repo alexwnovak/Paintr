@@ -16,7 +16,12 @@ namespace Paintr
 
       private void _openMenuItem_Click( object sender, System.EventArgs e )
       {
+         var dialogResult = _openFileDialog.ShowDialog();
 
+         if ( dialogResult == DialogResult.Cancel )
+         {
+            return;
+         }
       }
    }
 }
