@@ -27,5 +27,10 @@ namespace Paintr
 
          BackgroundImage = Image.FromFile( _openFileDialog.FileName );
       }
+
+      private void _closeMenuItem_Click( object sender, System.EventArgs e )
+      {
+
+      }
    }
 }

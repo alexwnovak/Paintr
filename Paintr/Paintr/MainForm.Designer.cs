@@ -33,6 +33,8 @@
          this._exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._openMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
+         this._closeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
          this._menuStrip.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -50,6 +52,8 @@
          // 
          this._fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._openMenuItem,
+            this._closeMenuItem,
+            this.toolStripSeparator1,
             this._exitMenuItem});
          this._fileMenu.Name = "_fileMenu";
          this._fileMenu.Size = new System.Drawing.Size(37, 20);
@@ -58,7 +62,7 @@
          // _exitMenuItem
          // 
          this._exitMenuItem.Name = "_exitMenuItem";
-         this._exitMenuItem.Size = new System.Drawing.Size(152, 22);
+         this._exitMenuItem.Size = new System.Drawing.Size(191, 22);
          this._exitMenuItem.Text = "E&xit";
          this._exitMenuItem.Click += new System.EventHandler(this._exitMenuItem_Click);
          // 
@@ -74,6 +78,18 @@
          // 
          this._openFileDialog.Filter = "Image files|*.bmp;*.gif;*.jpg;*.jpeg;*.png";
          this._openFileDialog.Title = "Open Image";
+         // 
+         // _closeMenuItem
+         // 
+         this._closeMenuItem.Name = "_closeMenuItem";
+         this._closeMenuItem.Size = new System.Drawing.Size(191, 22);
+         this._closeMenuItem.Text = "&Close";
+         this._closeMenuItem.Click += new System.EventHandler(this._closeMenuItem_Click);
+         // 
+         // toolStripSeparator1
+         // 
+         this.toolStripSeparator1.Name = "toolStripSeparator1";
+         this.toolStripSeparator1.Size = new System.Drawing.Size(188, 6);
          // 
          // MainForm
          // 
@@ -103,6 +119,8 @@
       private System.Windows.Forms.ToolStripMenuItem _exitMenuItem;
       private System.Windows.Forms.ToolStripMenuItem _openMenuItem;
       private System.Windows.Forms.OpenFileDialog _openFileDialog;
+      private System.Windows.Forms.ToolStripMenuItem _closeMenuItem;
+      private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
    }
 }
 
