@@ -11,7 +11,7 @@ namespace Paintr
 
       private void _exitMenuItem_Click( object sender, System.EventArgs e )
       {
-
+         Application.Exit();
       }
    }
 }
