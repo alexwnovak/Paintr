@@ -99,6 +99,7 @@
          this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
          this.ClientSize = new System.Drawing.Size(707, 459);
          this.Controls.Add(this._menuStrip);
+         this.DoubleBuffered = true;
          this.MainMenuStrip = this._menuStrip;
          this.MaximizeBox = false;
          this.MinimizeBox = false;
