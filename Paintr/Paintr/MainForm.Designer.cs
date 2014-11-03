@@ -36,6 +36,7 @@
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          this.ClientSize = new System.Drawing.Size(707, 459);
          this.Name = "MainForm";
+         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Paintr";
          this.ResumeLayout(false);
 
