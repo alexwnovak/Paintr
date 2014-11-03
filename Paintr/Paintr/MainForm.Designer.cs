@@ -66,12 +66,13 @@
          // 
          this._openMenuItem.Name = "_openMenuItem";
          this._openMenuItem.Size = new System.Drawing.Size(152, 22);
-         this._openMenuItem.Text = "&Open";
+         this._openMenuItem.Text = "&Open Image...";
          this._openMenuItem.Click += new System.EventHandler(this._openMenuItem_Click);
          // 
          // _openFileDialog
          // 
          this._openFileDialog.Filter = "Image files|*.bmp;*.gif;*.jpg;*.jpeg;*.png";
+         this._openFileDialog.Title = "Open Image";
          // 
          // MainForm
          // 
