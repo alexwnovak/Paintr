@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace Paintr
 {
@@ -22,6 +24,8 @@ namespace Paintr
          {
             return;
          }
+
+         BackgroundImage = Image.FromFile( _openFileDialog.FileName );
       }
    }
 }
