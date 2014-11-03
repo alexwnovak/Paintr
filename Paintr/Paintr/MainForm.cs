@@ -77,5 +77,13 @@ namespace Paintr
             _leftMouseDown = false;
          }
       }
+
+      private void MainForm_MouseMove( object sender, MouseEventArgs e )
+      {
+         if ( !_leftMouseDown )
+         {
+            return;
+         }
+      }
    }
 }
