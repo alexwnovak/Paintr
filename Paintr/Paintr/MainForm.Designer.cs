@@ -37,13 +37,15 @@
          this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
          this._saveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+         this._toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
          this._menuStrip.SuspendLayout();
          this.SuspendLayout();
          // 
          // _menuStrip
          // 
          this._menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._fileMenu});
+            this._fileMenu,
+            this._toolsMenu});
          this._menuStrip.Location = new System.Drawing.Point(0, 0);
          this._menuStrip.Name = "_menuStrip";
          this._menuStrip.Size = new System.Drawing.Size(707, 24);
@@ -107,6 +109,11 @@
          // 
          this._saveFileDialog.Filter = "Image files|*.bmp;*.gif;*.jpg;*.jpeg;*.png";
          this._saveFileDialog.Title = "Save Image";
+         // _toolsMenu
+         // 
+         this._toolsMenu.Name = "_toolsMenu";
+         this._toolsMenu.Size = new System.Drawing.Size(48, 20);
+         this._toolsMenu.Text = "&Tools";
          // 
          // MainForm
          // 
@@ -143,6 +150,7 @@
       private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
       private System.Windows.Forms.ToolStripMenuItem _saveMenuItem;
       private System.Windows.Forms.SaveFileDialog _saveFileDialog;
+      private System.Windows.Forms.ToolStripMenuItem _toolsMenu;
    }
 }
 
