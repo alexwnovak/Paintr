@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Paintr
@@ -58,6 +59,8 @@ namespace Paintr
 
          Invalidate();
 
+         Text = _openFileDialog.FileName + " - Paintr";
+
          HasFileOpen = true;
       }
 
@@ -67,6 +70,8 @@ namespace Paintr
          {
             _backgroundImage.Dispose();
             _backgroundImage = null;
+
+            Text = "Paintr";
          }
 
          HasFileOpen = false;
