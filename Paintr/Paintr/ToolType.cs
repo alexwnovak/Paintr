@@ -2,5 +2,7 @@
 {
    public enum ToolType
    {
+      Pen,
+      Rectangle
    }
 }
