@@ -102,8 +102,6 @@
          this.Controls.Add(this._menuStrip);
          this.DoubleBuffered = true;
          this.MainMenuStrip = this._menuStrip;
-         this.MaximizeBox = false;
-         this.MinimizeBox = false;
          this.Name = "MainForm";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Paintr";
