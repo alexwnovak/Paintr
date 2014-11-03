@@ -8,6 +8,7 @@ namespace Paintr
 {
    public partial class MainForm : Form
    {
+      private const string _autoSaveFilename = "____autosave.bmp";
       private bool _leftMouseDown;
       private Point _mouseAnchorPoint;
       private Timer _autoSaveTimer;
@@ -37,7 +38,7 @@ namespace Paintr
 
       private void _autoSaveTimer_Tick( object sender, EventArgs e )
       {
-         _backgroundImage.Save( "___autosave.bmp");
+         _backgroundImage.Save( _autoSaveFilename );
       }
 
       private Graphics _graphics;
@@ -46,9 +47,9 @@ namespace Paintr
       public MainForm()
       {
          InitializeComponent();
-         if ( File.Exists("___autosave.bmp") )
+         if (File.Exists(_autoSaveFilename))
          {
-            OpenFile( "___autosave.bmp" );
+            OpenFile(_autoSaveFilename);
          }
          UpdateUI();
       }
