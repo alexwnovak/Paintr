@@ -120,7 +120,19 @@ namespace Paintr
 
       private void saveToolStripMenuItem_Click(object sender, System.EventArgs e)
       {
+         saveAnnotations();
+      }
 
+      private void saveAnnotations()
+      {
+         _saveFileDialog.ShowDialog();
+
+         var filename = _saveFileDialog.FileName;
+
+         if ( !string.IsNullOrWhiteSpace(filename) )
+         {
+            _backgroundImage.Save(filename);
+         }
       }
    }
 }
