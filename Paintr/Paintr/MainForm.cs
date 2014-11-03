@@ -37,6 +37,7 @@ namespace Paintr
       }
 
       private Pen _linePen;
+      private Rectangle _dragRect;
       private Image _backgroundImage;
 
       public MainForm()
@@ -123,6 +124,14 @@ namespace Paintr
             Invalidate();
 
             _mouseAnchorPoint = e.Location;
+         }
+         else if ( ToolType == ToolType.Rectangle )
+         {
+            int x = _mouseAnchorPoint.X;
+            int y = _mouseAnchorPoint.Y;
+            int w = e.Location.X - x;
+            int h = e.Location.Y - y;
+            _dragRect = new Rectangle( x, y, w, h );
          }
       }
 
