@@ -6,6 +6,8 @@ namespace Paintr
 {
    public partial class MainForm : Form
    {
+      private bool _leftMouseDown;
+
       private bool _hasFileOpen;
       private bool HasFileOpen
       {
@@ -62,12 +64,18 @@ namespace Paintr
 
       private void MainForm_MouseDown( object sender, MouseEventArgs e )
       {
-
+         if ( e.Button == MouseButtons.Left )
+         {
+            _leftMouseDown = true;
+         }
       }
 
       private void MainForm_MouseUp( object sender, MouseEventArgs e )
       {
-
+         if ( e.Button == MouseButtons.Left )
+         {
+            _leftMouseDown = false;
+         }
       }
    }
 }
