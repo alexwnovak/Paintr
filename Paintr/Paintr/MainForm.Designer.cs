@@ -104,6 +104,7 @@
          // 
          // _saveFileDialog
          // 
+         this._saveFileDialog.Filter = "Image files|*.bmp;*.gif;*.jpg;*.jpeg;*.png";
          this._saveFileDialog.Title = "Save Image";
          // 
          // MainForm

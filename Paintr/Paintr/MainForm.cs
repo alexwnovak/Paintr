@@ -119,7 +119,6 @@ namespace Paintr
 
       private void saveAnnotations()
       {
-         _saveFileDialog.Filter = _openFileDialog.Filter;
          _saveFileDialog.ShowDialog();
 
          var filename = _saveFileDialog.FileName;
