@@ -69,6 +69,10 @@
          this._openMenuItem.Text = "&Open";
          this._openMenuItem.Click += new System.EventHandler(this._openMenuItem_Click);
          // 
+         // _openFileDialog
+         // 
+         this._openFileDialog.Filter = "Image files|*.bmp;*.gif;*.jpg;*.jpeg;*.png";
+         // 
          // MainForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
