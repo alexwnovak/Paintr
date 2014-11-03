@@ -39,6 +39,8 @@
          this._saveFileDialog = new System.Windows.Forms.SaveFileDialog();
          this._toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
          this._penMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
+         this._rectangleMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._menuStrip.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -113,7 +115,8 @@
          // _toolsMenu
          // 
          this._toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._penMenuItem});
+            this._penMenuItem,
+            this._rectangleMenuItem});
          this._toolsMenu.Name = "_toolsMenu";
          this._toolsMenu.Size = new System.Drawing.Size(48, 20);
          this._toolsMenu.Text = "&Tools";
@@ -122,8 +125,20 @@
          // 
          this._penMenuItem.Name = "_penMenuItem";
          this._penMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-         this._penMenuItem.Size = new System.Drawing.Size(152, 22);
+         this._penMenuItem.Size = new System.Drawing.Size(166, 22);
          this._penMenuItem.Text = "&Pen";
+         // 
+         // _openFileDialog
+         // 
+         this._openFileDialog.Filter = "Image files|*.bmp;*.gif;*.jpg;*.jpeg;*.png";
+         this._openFileDialog.Title = "Open Image";
+         // 
+         // _rectangleMenuItem
+         // 
+         this._rectangleMenuItem.Name = "_rectangleMenuItem";
+         this._rectangleMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
+         this._rectangleMenuItem.Size = new System.Drawing.Size(166, 22);
+         this._rectangleMenuItem.Text = "&Rectangle";
          // 
          // MainForm
          // 
@@ -162,6 +177,7 @@
       private System.Windows.Forms.SaveFileDialog _saveFileDialog;
       private System.Windows.Forms.ToolStripMenuItem _toolsMenu;
       private System.Windows.Forms.ToolStripMenuItem _penMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem _rectangleMenuItem;
    }
 }
 
