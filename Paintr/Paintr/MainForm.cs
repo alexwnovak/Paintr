@@ -108,6 +108,12 @@ namespace Paintr
          if ( e.Button == MouseButtons.Left )
          {
             _leftMouseDown = false;
+
+            if ( ToolType == ToolType.Rectangle )
+            {
+               _graphics.DrawRectangle( _linePen, _dragRect );
+               Invalidate();
+            }
          }
       }
 
