@@ -38,6 +38,7 @@
          this._saveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._saveFileDialog = new System.Windows.Forms.SaveFileDialog();
          this._toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
+         this._penMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._menuStrip.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -111,9 +112,18 @@
          this._saveFileDialog.Title = "Save Image";
          // _toolsMenu
          // 
+         this._toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._penMenuItem});
          this._toolsMenu.Name = "_toolsMenu";
          this._toolsMenu.Size = new System.Drawing.Size(48, 20);
          this._toolsMenu.Text = "&Tools";
+         // 
+         // _penMenuItem
+         // 
+         this._penMenuItem.Name = "_penMenuItem";
+         this._penMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
+         this._penMenuItem.Size = new System.Drawing.Size(152, 22);
+         this._penMenuItem.Text = "&Pen";
          // 
          // MainForm
          // 
@@ -151,6 +161,7 @@
       private System.Windows.Forms.ToolStripMenuItem _saveMenuItem;
       private System.Windows.Forms.SaveFileDialog _saveFileDialog;
       private System.Windows.Forms.ToolStripMenuItem _toolsMenu;
+      private System.Windows.Forms.ToolStripMenuItem _penMenuItem;
    }
 }
 
