@@ -84,6 +84,15 @@ namespace Paintr
          {
             return;
          }
+
+      private void MainForm_Paint( object sender, PaintEventArgs e )
+      {
+         if ( _backgroundImage == null )
+         {
+            return;
+         }
+
+         e.Graphics.DrawImage( _backgroundImage, Point.Empty );
       }
    }
 }

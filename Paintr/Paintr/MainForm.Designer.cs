@@ -106,6 +106,7 @@
          this.Name = "MainForm";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Paintr";
+         this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
          this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
          this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
          this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
