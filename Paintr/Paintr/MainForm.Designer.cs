@@ -31,6 +31,7 @@
          this._menuStrip = new System.Windows.Forms.MenuStrip();
          this._fileMenu = new System.Windows.Forms.ToolStripMenuItem();
          this._exitMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this._openMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this._menuStrip.SuspendLayout();
          this.SuspendLayout();
          // 
@@ -47,6 +48,7 @@
          // _fileMenu
          // 
          this._fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._openMenuItem,
             this._exitMenuItem});
          this._fileMenu.Name = "_fileMenu";
          this._fileMenu.Size = new System.Drawing.Size(37, 20);
@@ -58,6 +60,13 @@
          this._exitMenuItem.Size = new System.Drawing.Size(152, 22);
          this._exitMenuItem.Text = "E&xit";
          this._exitMenuItem.Click += new System.EventHandler(this._exitMenuItem_Click);
+         // 
+         // _openMenuItem
+         // 
+         this._openMenuItem.Name = "_openMenuItem";
+         this._openMenuItem.Size = new System.Drawing.Size(152, 22);
+         this._openMenuItem.Text = "&Open";
+         this._openMenuItem.Click += new System.EventHandler(this._openMenuItem_Click);
          // 
          // MainForm
          // 
@@ -84,6 +93,7 @@
       private System.Windows.Forms.MenuStrip _menuStrip;
       private System.Windows.Forms.ToolStripMenuItem _fileMenu;
       private System.Windows.Forms.ToolStripMenuItem _exitMenuItem;
+      private System.Windows.Forms.ToolStripMenuItem _openMenuItem;
    }
 }
 

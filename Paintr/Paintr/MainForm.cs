@@ -13,5 +13,10 @@ namespace Paintr
       {
          Application.Exit();
       }
+
+      private void _openMenuItem_Click( object sender, System.EventArgs e )
+      {
+
+      }
    }
 }
