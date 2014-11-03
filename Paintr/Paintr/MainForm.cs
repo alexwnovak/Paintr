@@ -51,7 +51,13 @@ namespace Paintr
 
       private void _closeMenuItem_Click( object sender, System.EventArgs e )
       {
+         if ( BackgroundImage != null )
+         {
+            BackgroundImage.Dispose();
+            BackgroundImage = null;
+         }
 
+         HasFileOpen = false;
       }
    }
 }
