@@ -48,6 +48,10 @@ namespace Paintr
       public MainForm()
       {
          InitializeComponent();
+         if (File.Exists(_autoSaveFilename))
+         {
+            OpenFile(_autoSaveFilename);
+         }
          UpdateUI();
 
          _linePen = new Pen( Brushes.Red, 10.0f );
