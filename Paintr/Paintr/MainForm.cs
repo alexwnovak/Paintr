@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+using System.Drawing;
+﻿using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -53,15 +54,23 @@ namespace Paintr
          {
             return;
          }
-
-         _backgroundImage = Image.FromFile( _openFileDialog.FileName );
-         _graphics = Graphics.FromImage( _backgroundImage );
-
-         Invalidate();
-
+         
          Text = _openFileDialog.FileName + " - Paintr";
 
-         HasFileOpen = true;
+         OpenFile( _openFileDialog.FileName);
+      }
+
+      private void OpenFile( String path )
+      {
+         using ( var fileStream = File.OpenRead( path ) )
+         {
+            _backgroundImage = Image.FromStream(fileStream);
+            _graphics = Graphics.FromImage(_backgroundImage);
+
+            Invalidate();
+
+            HasFileOpen = true;
+         }
       }
 
       private void _closeMenuItem_Click( object sender, System.EventArgs e )
