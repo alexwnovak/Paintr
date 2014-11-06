@@ -102,7 +102,7 @@ namespace Paintr
             return;
          }
 
-         _graphics.DrawLine( _linePen, _mouseAnchorPoint, e.Location );
+         _backgroundImage.AddLine( _mouseAnchorPoint, e.Location, _linePen );
          Invalidate();
 
          _mouseAnchorPoint = e.Location;
