@@ -117,5 +117,10 @@ namespace Paintr
 
          e.Graphics.DrawImage( _backgroundImage, Point.Empty );
       }
+
+      private void _saveMenuItem_Click( object sender, System.EventArgs e )
+      {
+
+      }
    }
 }
