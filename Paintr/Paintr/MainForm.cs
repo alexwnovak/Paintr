@@ -37,6 +37,7 @@ namespace Paintr
       private void UpdateUI()
       {
          _closeMenuItem.Enabled = HasFileOpen;
+         _saveMenuItem.Enabled = HasFileOpen;
       }
 
       private void _exitMenuItem_Click( object sender, System.EventArgs e )
