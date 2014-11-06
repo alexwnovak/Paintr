@@ -120,7 +120,14 @@ namespace Paintr
 
       private void _saveMenuItem_Click( object sender, System.EventArgs e )
       {
+         var dialogResult = _saveFileDialog.ShowDialog();
 
+         if ( dialogResult == DialogResult.Cancel )
+         {
+            return;
+         }
+
+         _backgroundImage.Save( _saveFileDialog.FileName );
       }
    }
 }
