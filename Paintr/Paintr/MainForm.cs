@@ -111,7 +111,7 @@ namespace Paintr
 
             if ( ToolType == ToolType.Rectangle )
             {
-               _graphics.DrawRectangle( _linePen, _dragRect );
+               _backgroundImage.AddRectangle( _dragRect, _linePen );
                Invalidate();
             }
          }

@@ -11,5 +11,13 @@ namespace Paintr
             g.DrawLine( pen, startingPoint, endPoint );
          }
       }
+
+      public static void AddRectangle( this Image image, Rectangle rect, Pen pen )
+      {
+         using ( Graphics g = Graphics.FromImage( image ) )
+         {
+            g.DrawRectangle( pen, rect );
+         }
+      }
    }
 }
