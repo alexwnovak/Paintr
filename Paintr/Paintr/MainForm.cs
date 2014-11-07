@@ -22,7 +22,6 @@ namespace Paintr
          }
       }
 
-      private Graphics _graphics;
       private Pen _linePen;
       private Image _backgroundImage;
 
@@ -55,7 +54,6 @@ namespace Paintr
          }
 
          _backgroundImage = Image.FromFile( _openFileDialog.FileName );
-         _graphics = Graphics.FromImage( _backgroundImage );
 
          Invalidate();
 
@@ -102,7 +100,7 @@ namespace Paintr
             return;
          }
 
-         _graphics.DrawLine( _linePen, _mouseAnchorPoint, e.Location );
+         _backgroundImage.AddLine( _mouseAnchorPoint, e.Location, _linePen );
          Invalidate();
 
          _mouseAnchorPoint = e.Location;
